@@ -17,7 +17,6 @@ import thread
 from threading import Thread, Lock
 
 # define worker class that implements thread
-# base from http://code.activestate.com/recipes/577187-python-thread-pool/
 class Worker(Thread):
     """Thread executing tasks from a given tasks queue"""
     def __init__(self, requests, server):
@@ -31,12 +30,12 @@ class Worker(Thread):
         # start the thread on init
         self.start()
 
-    # function run indefinitely once thread is started
+    # function run indefinitely once thread will started
     def run(self):
         while True:
             # pop an element from the queue
             (conn, addr) = self.requests.get()
-            # check if valid connection or else kill loop
+            # check if valid connection or not else kill loop
             if conn:
                 for msg in self.server.extract_msg(conn, addr):
                     (request, vars) = self.server.get_req(conn, msg)
