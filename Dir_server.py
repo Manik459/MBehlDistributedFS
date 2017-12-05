@@ -1,3 +1,8 @@
+"""
+Created on Thur Nov 30 05:09:53 2017
+
+@author: MANIK
+"""
 import sys
 import config
 import random
