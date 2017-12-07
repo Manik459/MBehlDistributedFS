@@ -58,7 +58,7 @@ def parse(msg):
 	
 def request_handler(filename, conn_to_client):
 	if filename in  os.listdir("cached_files/"):
-		print("CHACHE HIT", filename)
+		print("CACHE HIT", filename)
 		#return file TODO
 		filename="cached_files/" +str(filename)
 		f = open(filename,'rb')
